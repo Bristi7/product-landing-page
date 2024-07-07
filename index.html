@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Air Jordan landing page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's new</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        
+        <div class="content">
+            <div class="textbox">
+                <h2>It's not just a Shoe<br>It's <span class="air-jordan">Air Jordan</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sunt nesciunt enim possimus expedita ducimus dolor, itaque a incidunt, doloremque qui dicta, dolore repellat labore minima voluptate cumque dolorem provident.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="imgBox">
+                <img src="img1.png" class="nike-large">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li>
+                <img src="shoe11.png" onclick="imgSlider('img1.png', '#9c0101', '299')">
+                <p class="thumb-price">$299</p>
+            </li>
+            <li>
+                <img src="Shoe33.png" onclick="imgSlider('img2.png', '#499187b7', '349')">
+                <p class="thumb-price">$349</p>
+            </li>
+            <li>
+                <img src="Shoe22.png" onclick="imgSlider('img3 (2).png', '#333', '399')">
+                <p class="thumb-price">$399</p>
+            </li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"><img src="facebook.png"></a></li>
+            <li><a href="#"><img src="instagram.png"></a></li>
+            <li><a href="#"><img src="twitter.png"></a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function imgSlider(imagePath, circleColor, price){
+            const nikeImageLarge = document.querySelector('.nike-large');
+            const circle = document.querySelector('.circle');
+            const learnMoreBtn = document.querySelector('.learn-more');
+            
+            nikeImageLarge.src = imagePath;
+            circle.style.background = circleColor;
+            learnMoreBtn.style.background = circleColor;
+            
+            const airJordanText = document.querySelector('.air-jordan');
+            airJordanText.style.color = circleColor;
+            
+            const imgBox = document.querySelector('.imgBox');
+            imgBox.classList.remove('slide-in');
+            void imgBox.offsetWidth; 
+            imgBox.classList.add('slide-in');
+        }
+
+        function toggleMenu() {
+            const menu = document.querySelector('header ul');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
